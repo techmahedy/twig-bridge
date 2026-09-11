@@ -33,7 +33,7 @@ class TwigLauncher extends PackageServiceLauncher implements GhostableLauncher
 
             $twig = new TwigEnvironment($loader, [
                 'cache' => base_path('storage/framework/twig'),
-                'debug' => env('APP_DEBUG') === 'true',
+                'debug' => env('APP_DEBUG', false),
             ]);
 
             $twig->addExtension(new DebugExtension());
